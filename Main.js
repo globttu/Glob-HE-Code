@@ -54,9 +54,16 @@ function scan_touching_blocks(x,y,z){
         let tb_y=touching_block[1]
         let tb_z=touching_block[2]
 
-        let result=get_touching_blocks(tb_x,tb_y,tb_z);
-
+        let result=get_data(tb_x,tb_y,tb_z);
+        if (result[1]===true){
+            let formated={["id"]: result[2].id, x,y,z}
+            formated.x=tb_x-[result[0][0]]
+            formated.y=tb_y-[result[0][1]]
+            formated.z=tb_z-[result[0][2]]
+            output[output.length]=formated
+        }
     })
+    return output;
 }
 
 
@@ -92,3 +99,6 @@ function get_block_around_player(pos, radius) {
 
 let final=get_block_around_player([5, 4, 3], 3);
 console.log(final);
+//scanning test
+let scanned_data=scan_touching_blocks(5,5,4);
+console.log(scanned_data);
