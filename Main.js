@@ -103,6 +103,7 @@ function add_block(x,y,z,id){
 
 
 
+
 let final=get_block_around_player([5, 4, 3], 3);
 console.log(final);
 //scanning test
