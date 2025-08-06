@@ -95,6 +95,12 @@ function get_block_around_player(pos, radius) {
     return output;
 }
 
+//info: use this function to add blocks to the registry
+function add_block(x,y,z,id){
+    let position_string = `${x},${y},${z}`;
+    blocks[position_string] = {id:id}
+}
+
 
 
 let final=get_block_around_player([5, 4, 3], 3);
